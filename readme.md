@@ -1,43 +1,43 @@
 # initial setup
 these notes are specific to OS X tho they may work on other 'nixes
 make sure you have the Java SDK up to date -- probably need to restart after installing, then 
-clone this repo to <some_dir> and cd to <some_dir> and run
-run composer install
+clone this repo to <some_dir> and cd to <some_dir> and run composer install
 copy app/parameters_eg.yml to app/parameters.yml and set usernames & passwords & client configs accordingly
 
 # run the server:
-cd bin
-java -jar selenium-server-standalone-3.0.1.jar  > /dev/null&
-cd ..
-(shell script ./start_server does this too)
+```
+./start_server
+```
 
-# alternatively, run the server in a separate terminal:
+# alternatively, run the server in a separate terminal (from the bin directory:
+```
 java -jar selenium-server-standalone-3.0.1.jar
+```
 
-# run the KO script:
-app/console ko:front-end-tests
+# run the command:
+```
+app/console ml:front-end-tests -c -estag -tstandard
+```
 the options available are
-* client_uids (eg frontline or merf)
+* client_uids (not used currently, future expansion)
 * env (prod|stag|local)
 * browser (chrome | firefox, but only the former works presently)
 * username (if not the one specified in config, can be overridden)
 * password (if not the one specified in config, can be overridden)
-* usertype (admin|full|partial) -- full is the default
-* loglevel (info|notice) -- info is the default and is more verbose
-app/console ko:front-end-tests --help (for this info, but may be more up-to-date)
-
-# run sanity checks on all clients
-chmod a+x run_all.sh (if necessary)
-./run_all.sh
+* usertype (admin|ref|captain|standard) -- admin is the default
+* log-no-details -- less verbose logging
+app/console ml:front-end-tests --help (for this info, but may be more up-to-date)
 
 # read the logs
+```
+cat app/log/error.log  # hope it's empty!
 cat app/log/app.log
-cat app/log/error.log
+```
 
-# if using one terminal, you can terminate the server using
-fg
-^C
-(shell script ./stop_server now does this)
+# terminate the server:
+```
+./stop_server
+```
 
 # references
 * http://facebook.github.io/php-webdriver/index.html
