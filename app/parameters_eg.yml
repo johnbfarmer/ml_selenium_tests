@@ -1,0 +1,51 @@
+user:
+  local:
+    standard:
+        username: bob
+        password: (not public)
+    captain:
+        username: ted
+        password: (not public)
+    ref:
+        username:
+        password: (np)
+    admin:
+        username: alice
+        password: (not public)
+  stag:
+    standard:
+        username: bob
+        password: (not public)
+    captain:
+        username: ted
+        password: (not public)
+    ref:
+        username:
+        password: (np)
+    admin:
+        username: alice
+        password: (not public)
+  prod:
+    standard:
+        username: acronym_test_user_part
+        password: (not public)
+    captain:
+        username: acronym_test_user_captain
+        password: (not public)
+    ref:
+        username:
+        password: (np)
+    admin:
+        username: acronym_test_user_admin
+        password: (not public)
+
+clients:
+    prod:
+        assa:
+            domain: https://azregistration.com
+    stag:
+        ml:
+            domain: http://manyleagues.com
+    local:
+        ml:
+            domain: http://ml.sym/app_dev.php

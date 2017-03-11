@@ -1,0 +1,11 @@
+/vendor/
+
+/.DS_Store
+
+/composer.lock
+
+/app/parameters.yml
+/app/log/*.log
+
+/src/.DS_Store
+/nbproject/*
