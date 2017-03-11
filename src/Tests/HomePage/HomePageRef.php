@@ -10,7 +10,7 @@ class HomePageRef extends BaseHomePage
     protected
         $uid = 'ref home page';
 
-    protected function runTests()
+    protected function runUserTypeTests()
     {
         $this->log(get_called_class());
     }

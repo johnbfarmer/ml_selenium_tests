@@ -10,7 +10,7 @@ class HomePageStandard extends BaseHomePage
     protected
         $uid = 'standard home page';
 
-    protected function runTests()
+    protected function runUserTypeTests()
     {
         $this->log(get_called_class());
     }

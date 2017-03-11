@@ -14,6 +14,8 @@ class BaseGamePage extends BaseTest
 
     protected function runTests()
     {
-        $this->log(get_called_class());
+        $this->log('no writes: '.$this->no_db_writes);
+        $this->notice(get_called_class());
+        $this->runUserTypeTests();
     }
 }

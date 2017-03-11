@@ -21,7 +21,7 @@ class BaseTest
         $log_level = 'INFO',
         $uid = 'uid unknown',
         $app_should_be_present = true,
-        $apps = [];
+        $no_db_writes = true;
 
     public function __construct($parameters)
     {
@@ -30,6 +30,7 @@ class BaseTest
         $this->usertype = $parameters['usertype'];
         $this->username = $parameters['username'];
         $this->password = $parameters['password'];
+        $this->no_db_writes = !empty($parameters['no-db-writes']);
         $this->base_url = isset($parameters['base_url']) ? $parameters['base_url'] : null;
         $this->logger = $parameters['logger'];
         $this->error_logger = $parameters['error_logger'];

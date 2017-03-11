@@ -101,6 +101,7 @@ class TestControl
             'password' => $this->password,
             'base_url' => $this->base_url,
             'loglevel' => $this->loglevel,
+            'no-db-writes' => $this->parameters['no-db-writes'],
             'logger' => $this->logger,
             'error_logger' => $this->error_logger,
         ];

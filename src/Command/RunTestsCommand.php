@@ -82,6 +82,12 @@ class RunTestsCommand extends Command
                 'c',
                 InputOption::VALUE_NONE,
                 'erase the existing logs'
+            )
+            ->addOption(
+                'no-db-writes',
+                null,
+                InputOption::VALUE_REQUIRED,
+                'true|false. by default this will be true in prod mode, false in others. the login will still be written to the change log'
             );
     }
 
@@ -95,10 +101,14 @@ class RunTestsCommand extends Command
             throw new \Exception('Env ' . $env . ' is not a recognized env. Choices are ' . implode(', ', $this->envs));
         }
 
-        $this->parameters['loglevel'] = isset($this->parameters['log-no-details']) ? 'notice' : 'info';
+        $this->parameters['loglevel'] = !empty($this->parameters['log-no-details']) ? 'notice' : 'info';
 
         if (!isset($this->parameters['usertype'])) {
             $this->parameters['usertype'] = 'admin';
+        }
+
+        if (!isset($this->parameters['no-db-writes'])) {
+            $this->parameters['no-db-writes'] = $env == 'prod';
         }
 
         if (empty($this->parameters['client_uids']) && empty($this->parameters['all'])) {
@@ -110,6 +120,7 @@ class RunTestsCommand extends Command
         } else {
             $client_uids = explode(',', strtolower($this->parameters['client_uids']));
         }
+
         foreach ($client_uids as $client_uid) {
             if (!empty($client_configs[$client_uid])) {
                 $client_config = $client_configs[$client_uid];

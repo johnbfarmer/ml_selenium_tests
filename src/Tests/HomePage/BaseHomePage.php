@@ -15,5 +15,6 @@ class BaseHomePage extends BaseTest
     protected function runTests()
     {
         $this->log(get_called_class());
+        $this->runUserTypeTests();
     }
 }

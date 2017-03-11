@@ -10,7 +10,7 @@ class GamePageCaptain extends BaseGamePage
     protected
         $uid = 'captain game page';
 
-    protected function runTests()
+    protected function runUserTypeTests()
     {
         $this->log(get_called_class());
     }

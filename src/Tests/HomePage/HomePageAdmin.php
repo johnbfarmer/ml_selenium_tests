@@ -10,7 +10,7 @@ class HomePageAdmin extends BaseHomePage
     protected
         $uid = 'admin home page';
 
-    protected function runTests()
+    protected function runUserTypeTests()
     {
         $this->log(get_called_class());
     }

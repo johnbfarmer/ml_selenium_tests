@@ -10,7 +10,7 @@ class GamePageRef extends BaseGamePage
     protected
         $uid = 'ref game page';
 
-    protected function runTests()
+    protected function runUserTypeTests()
     {
         $this->log(get_called_class());
     }
