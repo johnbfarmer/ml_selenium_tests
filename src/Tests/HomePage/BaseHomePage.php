@@ -5,16 +5,16 @@ namespace Tests\HomePage;
 use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\WebDriverExpectedCondition;
 
-use Tests\BaseTest;
+use Tests\BasePageTest;
 
-class BaseHomePage extends BaseTest
+class BaseHomePage extends BasePageTest
 {
     protected
-        $uid = 'home page details';
+        $uid = 'home page details',
+        $link_text = 'Home';
 
-    protected function runTests()
+    protected function runBaseTests()
     {
-        $this->log(get_called_class());
-        $this->runUserTypeTests();
+        $this->log('base page');
     }
 }

@@ -14,5 +14,6 @@ class MainTest extends BaseTest
     {
         HomePageTest::autoExecute($this->parameters);
         GamePageTest::autoExecute($this->parameters);
+        ReportsPageTest::autoExecute($this->parameters);
     }
 }

@@ -26,7 +26,11 @@ the options available are
 * password (if not the one specified in config, can be overridden)
 * usertype (admin|ref|captain|standard) -- admin is the default
 * log-no-details -- less verbose logging
-app/console ml:front-end-tests --help (for this info, but may be more up-to-date)
+
+# for more current and complete information on options
+```
+app/console ml:front-end-tests --help
+```
 
 # read the logs
 ```

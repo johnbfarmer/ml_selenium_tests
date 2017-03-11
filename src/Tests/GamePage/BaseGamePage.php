@@ -5,17 +5,16 @@ namespace Tests\GamePage;
 use Facebook\WebDriver\WebDriverBy;
 use Facebook\WebDriver\WebDriverExpectedCondition;
 
-use Tests\BaseTest;
+use Tests\BasePageTest;
 
-class BaseGamePage extends BaseTest
+class BaseGamePage extends BasePageTest
 {
     protected
-        $uid = 'game page details';
+        $uid = 'game page details',
+        $link_text = 'Games';
 
-    protected function runTests()
+    protected function runBaseTests()
     {
-        $this->log('no writes: '.$this->no_db_writes);
-        $this->notice(get_called_class());
-        $this->runUserTypeTests();
+        $this->log('base page');
     }
 }
